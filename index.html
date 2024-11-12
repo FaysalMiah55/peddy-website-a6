@@ -12,7 +12,7 @@
 </head>
 <body>
     <header class="lato container mx-auto ">
-        <nav class="navbar bg-base-100">
+        <nav class="navbar">
             <div class="navbar-start">                
                 <a href="#" class="flex gap-2 text-xl"><img src="images/logo.webp" alt="">Peddy</a>
             </div>
@@ -69,11 +69,20 @@
                 <h2 class="text-[40px] font-[900]">Adopt  Your  Best Friend</h2>
                 <p class="text-[16px] opacity-70">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
             </div>
-            <div id="category"></div>
+            <div id="category" class="inter mt-12 flex justify-between gap-6 text-2xl font-bold"></div>
+        </section>
+        <div class="lato flex justify-between items-center mt-8">
+            <h2 class="text-2xl font-[900]">Best Deal For you</h2>
+            <button class="bg-[#0E7A81] text-white px-6 py-3 rounded-xl mt-2">Sort By Price</button>
+        </div>
+        <!-- image section -->
+        <section id="pets-card" class="w-8/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
+
         </section>
     </main>
 
     <!-- javascript -->
     <script src="js/category.js"></script>
+    <script src="js/pets.js"></script>
 </body>
 </html>

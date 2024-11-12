@@ -7,15 +7,15 @@ const loadCategories = async() => {
 }
 // create display categories
 const displayCategories = (categories) => {
-    console.log(categories);
     const categoryContainer = document.getElementById("category")
     categories.forEach(element => {
         // create button
         const btnContainer = document.createElement("div")
+        btnContainer.classList = "flex gap-2 btn"
         btnContainer.innerHTML = `
-        <button class="btn flex">${element.category_icon}${element.category}</button>
+        <img class="w-8" src="${element.category_icon}"/>
+        <button>${element.category}</button>
         `
-
         // add button to category container
         categoryContainer.append(btnContainer)
     });
