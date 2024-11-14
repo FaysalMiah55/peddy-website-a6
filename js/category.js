@@ -5,7 +5,7 @@ const loadCategories = async() => {
     const data = await res.json()
     displayCategories(data.categories)
 }
-// create display categories
+// pets display categories
 const displayCategories = (categories) => {
     const categoryContainer = document.getElementById("category")
     categories.forEach(element => {
@@ -21,5 +21,7 @@ const displayCategories = (categories) => {
     });
     
 }
+
+// show selected pets
 
 loadCategories()
