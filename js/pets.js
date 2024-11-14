@@ -18,7 +18,7 @@ const displayPets = (pets) => {
             </figure>
             <div class="space-y-2">
                 <h3 class="inter text-xl font-bold mt-6">${element.pet_name}</h3>
-                <div class="lato flex items-center gap-2">
+                <div class="flex items-center gap-2">
                     <svg width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <desc>
                                 Created with Pixso.
@@ -36,9 +36,9 @@ const displayPets = (pets) => {
                             <path id="Vector" d="M12.39 15.93C12.86 16.4 13.5 16.66 14.16 16.66C14.82 16.66 15.46 16.4 15.93 15.93C16.4 15.46 16.66 14.82 16.66 14.16C16.66 13.5 16.4 12.86 15.93 12.39C15.46 11.93 14.82 11.66 14.16 11.66C13.5 11.66 12.86 11.93 12.39 12.39C11.93 12.86 11.66 13.5 11.66 14.16C11.66 14.82 11.93 15.46 12.39 15.93Z" stroke="#5A5A5A" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
                         </g>
                     </svg>
-                    <h5>breed: ${element.breed}</h5>
+                    <h5>Breed: ${element.breed}</h5>
                 </div>
-                <div class="lato flex items-center gap-2">
+                <div class="flex items-center gap-2">
                     <svg width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none"       xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <defs>
                             <clipPath id="clip2081_135">
@@ -52,7 +52,7 @@ const displayPets = (pets) => {
                     </svg>
                     <h5>Birth: ${element.date_of_birth}</h5>
                 </div>
-                <div class="lato flex items-center gap-2">
+                <div class="flex items-center gap-2">
                     <svg width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <desc>
                                 Created with Pixso.
@@ -74,7 +74,7 @@ const displayPets = (pets) => {
                     </svg>
                     <h5>Gender: ${element.gender}</h5>
                 </div>
-                <div class="lato flex items-center gap-2">
+                <div class="flex items-center gap-2">
                     <svg width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <desc>
                                 Created with Pixso.
@@ -92,7 +92,7 @@ const displayPets = (pets) => {
                     </svg>
                     <h5>Price: ${element.price}</h5>
                 </div>
-                <div class="lato flex justify-between items-center mt-4">
+                <div class="flex justify-between items-center mt-4">
                     <button class="btn text-[#13131399] opacity-60"><img width="24" height="24" src="https://img.icons8.com/material-outlined/24/facebook-like--v1.png" alt="facebook-like--v1"/></button>
                     <button class="btn text-[#0E7A81]">Adopt</button>
                     <button class="btn text-[#0E7A81]">Details</button>
