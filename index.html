@@ -1,120 +1,199 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!doctype html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peddy Website</title>
-    <!-- css -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- tailwind and daysi -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peddy</title>
+
+    <!-- Font Awesome script -->
+    <script src="https://kit.fontawesome.com/7bf271c8b2.js" crossorigin="anonymous"></script>
+
+    <!-- daisyUI 4.12.12 CSS file + Tailwind CSS CDN script -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        lato: ["Lato", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
 </head>
-<body>
-    <!-- header part-->
-    <header class="lato container mx-auto ">
-        <nav class="navbar">
-            <div class="navbar-start">                
-                <a href="#" class="flex gap-2 text-xl"><img src="images/logo.webp" alt="">Peddy</a>
+
+<body class="font-lato">
+    <header>
+        <!-- Navbar -->
+        <nav class="relative mx-auto flex w-11/12 max-w-[1320px] items-center justify-between py-6 md:py-8 lg:py-10">
+            <button onclick="toggleSidebar()" id="menuBtn" class="text-[#131313] sm:hidden">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div
+                class="absolute left-1/2 flex -translate-x-1/2 transform items-center justify-center gap-3 sm:relative sm:left-auto sm:transform-none">
+                <img class="h-6" src="./images/logo.svg" alt="Peddy logo" />
+                <h3 class="text-3xl font-black text-[#131313]">Peddy</h3>
             </div>
-            <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal px-1">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Contact</a></li>
+            <ul
+                class="absolute left-1/2 hidden -translate-x-1/2 transform items-center justify-center gap-8 text-[#131313] sm:flex">
+                <li><a href="" class="hover:text-[#0E7A81]">Home</a></li>
+                <li><a href="" class="hover:text-[#0E7A81]">Shop</a></li>
+                <li><a href="" class="hover:text-[#0E7A81]">Contact</a></li>
+            </ul>
+            <div
+                class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[#0E7A8133] p-2 hover:bg-[#0E7A8133] md:h-12 md:w-12">
+                <img class="h-full w-full" src="./images/profile.svg" alt="" />
+            </div>
+            <aside id="sidebar"
+                class="fixed left-0 top-0 z-10 hidden h-screen w-48 bg-white/10 p-10 shadow-md backdrop-blur-md">
+                <button onclick="toggleSidebar()" class="absolute right-5 top-5">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <ul class="mt-4 space-y-4 text-[#131313]">
+                    <li>
+                        <a href="#home" class="hover:text-[#0E7A81]" onclick="toggleSidebar()">Home</a>
+                    </li>
+                    <li>
+                        <a href="#shop" class="hover:text-[#0E7A81]" onclick="toggleSidebar()">Shop</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="hover:text-[#0E7A81]" onclick="toggleSidebar()">Contact</a>
+                    </li>
                 </ul>
+            </aside>
+        </nav>
+        <!--Banner section -->
+        <section class="mx-auto mt-4 w-11/12 max-w-[1320px]">
+            <div class="mx-auto max-w-screen-md text-center">
+                <h4
+                    class="mb-3 text-center font-bold text-[#13131399] sm:mb-4 sm:text-lg md:mb-5 md:text-xl lg:mb-6 lg:text-2xl">
+                    Bringing Families Together ❤️‍🔥
+                </h4>
+                <h1
+                    class="mx-auto mb-3 text-center text-4xl font-black text-[#131313] sm:mb-4 sm:text-5xl md:mb-5 md:text-6xl lg:mb-6 lg:text-7xl">
+                    Your Path to Adoption Starts Here
+                </h1>
+                <p class="mx-auto mb-5 text-center text-[#131313] sm:mb-6 md:mb-7 lg:mb-8">
+                    At Peddy, we connect loving families with their perfect furry
+                    companions. If you are looking to adopt, we're here to make it easy,
+                    safe, and enjoyable.
+                </p>
+                <a href="#adopt"
+                    class="mb-8 inline-block transform rounded-xl bg-[#0E7A81] px-4 py-2 font-bold text-white transition duration-150 ease-in-out active:scale-95 md:mb-10 md:px-6 md:py-3 lg:mb-12 lg:px-8 lg:py-4">View
+                    More</a>
+                <img src="./images/pet.jpg" alt="" class="w-full" />
             </div>
-            <div class="navbar-end">
-                <a href="#" class=""><img width="32" height="32" src="https://img.icons8.com/windows/32/gender-neutral-user.png" alt="gender-neutral-user"/></a>
-                <div class="dropdown">
-                    <div tabindex="0" role="button" class=" lg:hidden">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
+        </section>
+    </header>
+
+    <main class="mt-12 sm:mt-16 md:mt-20 lg:mt-24">
+        <!-- Adopt section -->
+        <section id="adopt" class="mx-auto w-11/12 max-w-[1320px] scroll-mt-8">
+            <div class="mx-auto max-w-screen-md text-center">
+                <h2 class="mb-4 text-2xl font-black text-[#131313] md:mb-5 md:text-3xl lg:mb-6 lg:text-4xl">
+                    Adopt Your Best Friend
+                </h2>
+                <p class="mb-8 text-[#131313B2] md:mb-10 lg:mb-12">
+                    Here you'll find a variety of pets, each ready to become a cherished
+                    part of your family. Browse through the profiles to find your
+                    perfect match and make an adoption that changes lives.
+                </p>
+            </div>
+
+            <div id="categories" class="grid grid-cols-2 gap-6 lg:grid-cols-4"></div>
+
+            <div class="flex flex-wrap items-center justify-between gap-3 py-4 md:py-6 lg:py-8">
+                <h3 class="text-lg font-black text-[#131313] md:text-xl lg:text-2xl">
+                    Best Deal For You
+                </h3>
+                <button onclick="sortByPrice()"
+                    class="transform text-nowrap rounded-xl bg-[#0E7A81] px-4 py-2 font-bold text-white transition duration-150 ease-in-out active:scale-95 md:px-6 md:py-3 lg:px-8 lg:py-4">
+                    Sort by Price
+                </button>
+            </div>
+
+            <div class="mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:mb-8 lg:grid-cols-4">
+                <div id="loading" class="col-span-1 hidden md:col-span-2 lg:col-span-3">
+                    <div class="flex min-h-24 items-center justify-center sm:h-full">
+                        <span class="loading loading-bars loading-lg"></span>
                     </div>
-                    <ul
-                    tabindex="0"
-                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-32 p-2 shadow">
-                        <li><a>Home</a></li>
-                        <li><a>Shop</a></li>
-                        <li><a>Contact</a></li>
-                    </ul>
+                </div>
+                <div id="pets-container" class="col-span-1 md:col-span-2 lg:col-span-3">
+                    <div id="pets" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+                </div>
+
+                <div id="liked"
+                    class="col-span-1 grid min-h-24 grid-cols-2 content-start gap-6 rounded-xl border p-5 sm:h-full">
                 </div>
             </div>
-        </nav>
-        <!-- banner -->
-        <div class="text-center space-y-6 mt-[34px] w-[742px] mx-auto">
-            <div class="flex justify-center items-center gap-4">
-                <h3 class="text-2xl font-bold opacity-60">Bringing Families Together</h3>
-                <img width="36" height="36" src="https://img.icons8.com/emoji/48/fire.png" alt="fire"/>
-            </div>
-            <h1 class="text-7xl font-[900] "> Your Path to Adoption Starts Here</h1>
-            <p class="text-16px">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
-            <button id="viewMoreBtn" class="bg-[#0E7A81] text-white px-6 py-3 rounded-xl mt-2">View More</button>
-            <img class="mt-6" src="images/pet.webp" alt="">
-        </div>
-    </header>   
-    <!-- main part -->
-    <main class="lato container mx-auto mt-[100px]">
-        <!-- adopt section -->
-        <section id="adoptSection">
-            <div class="text-center space-y-6 mt-[34px] w-[742px] mx-auto px-[58px]">
-                <h2 class="text-[40px] font-[900]">Adopt  Your  Best Friend</h2>
-                <p class="text-[16px] opacity-70">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
-            </div>
-            <div id="category" class="inter mt-12 flex justify-between gap-6 text-2xl font-bold"></div>
         </section>
-        <div class="lato flex justify-between items-center mt-8">
-            <h2 class="text-2xl font-[900]">Best Deal For you</h2>
-            <button class="bg-[#0E7A81] text-white px-6 py-3 rounded-xl mt-2">Sort By Price</button>
-        </div>
-        <!-- image section -->
-        <section id="pets-card" class="w-8/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
+
+        <!-- Modal -->
+        <section id="modal" class="z-5 fixed left-0 top-0 hidden h-screen w-full bg-[#13131399]"></section>
+        <section id="timeModal" class="z-5 fixed left-0 top-0 hidden h-screen w-full bg-[#13131399]">
+            <div class="flex h-full w-full items-center justify-center">
+                <div
+                    class="mx-auto max-h-[90vh] w-11/12 max-w-96 overflow-y-auto overscroll-none rounded-xl bg-white p-8 text-center">
+                    <img src="./images/logo.svg" alt="" class="mx-auto mb-3" />
+                    <h3 class="mb-3 text-xl font-bold text-[#131313] md:text-2xl lg:text-3xl">
+                        Congrates!
+                    </h3>
+                    <p class="mb-3 text-sm text-[#131313B2] md:text-base">
+                        Adoption Process Is Start For Your Pet.
+                    </p>
+                    <p id="countdown" class="text-xl font-bold text-[#131313] md:text-2xl lg:text-3xl">
+                        3
+                    </p>
+                </div>
+            </div>
         </section>
     </main>
-    <!-- footer part -->
-    <footer class="bg-black mt-[100px] lato text-white">
-        <div class="lato container mx-auto grid grid-cols-3 gap-[330px] py-[100px]">
+
+    <footer class="bg-[#131313] py-8 md:py-16 lg:py-24">
+        <div class="mx-auto grid w-11/12 max-w-[1320px] grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
             <div>
-                <div class="flex items-center gap-3 mb-6">
-                    <svg width="28.954338" height="24.000000" viewBox="0 0 28.9543 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <desc>
-                                Created with Pixso.
-                        </desc>
-                        <defs/>
-                        <path id="Vector" d="M14.47 24C12.36 24 10.25 23.49 8.15 22.47L8.15 22.47C7.13 21.98 6.48 20.93 6.48 19.8C6.48 15.5 10.06 12.01 14.47 12.01C18.88 12.01 22.46 15.5 22.46 19.8C22.46 20.93 21.81 21.98 20.8 22.47C18.7 23.49 16.59 24 14.47 24Z" fill="#0E7A81" fill-opacity="1.000000" fill-rule="nonzero"/>
-                        <path id="Vector" d="M7.41 6.08C6.91 3.66 7.47 0.84 9.49 0.13C11.04 -0.41 13.3 0.62 14.04 4.19C14.54 6.61 13.99 9.44 11.96 10.14C10.4 10.68 8.15 9.64 7.41 6.08Z" fill="#0E7A81" fill-opacity="1.000000" fill-rule="nonzero"/>
-                        <path id="Vector" d="M17.14 10.14C15.11 9.44 14.56 6.61 15.06 4.19C15.8 0.63 18.05 -0.41 19.61 0.13C21.64 0.83 22.19 3.66 21.69 6.08C20.95 9.64 18.7 10.68 17.14 10.14Z" fill="#0E7A81" fill-opacity="1.000000" fill-rule="nonzero"/>
-                        <path id="Vector" d="M0.74 11.63C-0.4 9.76 -0.3 7.26 1.52 6.26C3.16 5.36 5.39 6.23 6.62 8.25C7.75 10.12 7.66 12.62 5.83 13.62C4.08 14.59 1.85 13.47 0.74 11.63Z" fill="#0E7A81" fill-opacity="1.000000" fill-rule="nonzero"/>
-                        <path id="Vector" d="M23.11 13.62C21.29 12.62 21.19 10.12 22.33 8.25C23.55 6.23 25.79 5.36 27.42 6.26C29.25 7.26 29.34 9.75 28.21 11.63C27.09 13.47 24.87 14.59 23.11 13.62Z" fill="#0E7A81" fill-opacity="1.000000" fill-rule="nonzero"/>
-                    </svg>
-                    <h2 class="text-[32px] font-[900]">Peddy</h2>                    
+                <div class="mb-4 flex items-center gap-3 md:mb-5 lg:mb-6">
+                    <img class="h-6" src="./images/logo.svg" alt="Peddy logo" />
+                    <h3 class="text-3xl font-black text-white">Peddy</h3>
                 </div>
-                <div class="text-[16px] opacity-90 w-[308px] space-y-3">
-                    <p>Location: av. Washington 165, NY CA 54003</p>
-                    <p>Phone: +31 85 964 47 25</p>
-                    <p>Email: info@yourdomain.com</p>
-                    <p>Openings hours: 9.00 AM - 5.00 PM</p>
-                </div>
-                <div class="flex gap-6 mt-3">
-                    <a href=""><img src="images/facebook-logo-48.png" alt=""></a>
-                    <a href=""><img src="images/x-48.png" alt=""></a>
-                    <a href=""><img src="images/youtube-48.png" alt=""></a>
-                    <a href=""><img src="images/instagram-48.png" alt=""></a>
-                </div>
+                <ul class="mb-4 text-[#FFFFFFE5] md:mb-5 lg:mb-6">
+                    <li>Location: av. Washington 165, NY CA 54003</li>
+                    <li>Phone: +31 85 964 47 25</li>
+                    <li>Email: info@yourdomain.com</li>
+                    <li>Openings hours: 9.00 AM - 5.00 PM</li>
+                </ul>
+                <ul class="flex items-center gap-6">
+                    <li>
+                        <a href=""><img src="./images/facebook.svg" alt="" class="h-6 lg:h-full" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/x.svg" alt="" class="h-6 lg:h-full" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/youtube.svg" alt="" class="h-6 lg:h-full" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/instagram.svg" alt="" class="h-6 lg:h-full" /></a>
+                    </li>
+                </ul>
             </div>
-            <div>
-                <h2 class="inter text-lg font-bold opacity-90 mb-8">Useful Links</h2>
-                <ul class="text-[16px] opacity-60 space-y-3">
+            <div class="md:justify-self-center">
+                <h3 class="mb-4 text-lg font-bold text-white md:mb-6 lg:mb-8">
+                    Useful Links
+                </h3>
+                <ul class="text-[#FFFFFF99]">
                     <li><a href="">Home</a></li>
                     <li><a href="">About Us</a></li>
                     <li><a href="">Animals</a></li>
@@ -122,17 +201,23 @@
                     <li><a href="">Contact</a></li>
                 </ul>
             </div>
-            <div>
-                <h2 class="inter text-lg font-bold opacity-90 mb-8">Drop a Message</h2>
-                <input type="text" placeholder="Enter your email" class="input input-bordered w-full max-w-xs bg-white opacity-30 mb-4" />
-                <button class="bg-[#0E7A81] text-xl font-bold text-white px-8 py-4 rounded-xl mt-2 w-full">Subscribe</button>
+            <div class="lg:justify-self-end">
+                <h3 class="mb-4 text-lg font-bold text-white md:mb-6 lg:mb-8">
+                    Drop a Message
+                </h3>
+                <form action="" class="space-y-4">
+                    <input type="text" placeholder="Enter your email"
+                        class="block w-full max-w-60 rounded-xl bg-[#FFFFFF0D] px-4 py-3" />
+                    <button href="#adopt"
+                        class="w-full max-w-60 rounded-xl bg-[#0E7A81] px-4 py-3 font-bold text-white">
+                        Subscribe
+                    </button>
+                </form>
             </div>
         </div>
     </footer>
 
-    <!-- javascript -->
-    <script src="js/viewMore.js"></script>
-    <script src="js/category.js"></script>
-    <script src="js/pets.js"></script>
+    <script src="./script.js"></script>
 </body>
+
 </html>

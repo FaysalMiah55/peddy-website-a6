@@ -1,1 +1,3 @@
-# peddy-website-a6
+# Project name
+Peddy - Pet Adoption Website
+
